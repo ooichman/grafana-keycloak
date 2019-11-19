@@ -12,6 +12,7 @@ now start the container to copy the grafana.ini file
 
 now copy the grafana.ini file to your working directory
 (or just use my)
+
     # podman cp --pause=false 03e05fb048dd:/etc/grafana/grafana.ini ./
 
 now add the following values:
