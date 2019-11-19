@@ -17,18 +17,18 @@ now copy the grafana.ini file to your working directory
 
 now add the following values:
 
-   [auth.generic_oauth]
-   enabled = true
-   name = OAuth
-   allow_sign_up = true
-   client_id = <some_id>
-   client_secret = <some_secret>
-   scopes = openid profile email
-   email_attribute_name = sub
-   auth_url = https://foo.bar/login/oauth/authorize
-   token_url = https://foo.bar/login/oauth/access_token
-   api_url = https://foo.bar/user
-  allow_sign_up = true
+     [auth.generic_oauth]
+     enabled = true
+     name = OAuth
+     allow_sign_up = true
+     client_id = <some_id>
+     client_secret = <some_secret>
+     scopes = openid profile email
+     email_attribute_name = sub
+     auth_url = https://foo.bar/login/oauth/authorize
+     token_url = https://foo.bar/login/oauth/access_token
+     api_url = https://foo.bar/user
+     allow_sign_up = true
 
 make sure you redirect to your openid connect realm
 
