@@ -1,16 +1,21 @@
-How to use grafana with OpenID Connect
+# How to use grafana with OpenID Connect
 
 getting the grafana image from the registry
 
+<cod>
 # podman pull grafana/grafana
+</code>
 
 now start the container to copy the grafana.ini file
-
+<code>
 # podman run -d --name=grafana -p 3000:3000 grafana/grafana
+</code>
 
 now copy the grafana.ini file to your working directory
 (or just use my)
+<code>
 # podman cp --pause=false 03e05fb048dd:/etc/grafana/grafana.ini ./
+</code>
 
 now add the following values:
 
