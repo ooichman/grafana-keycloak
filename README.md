@@ -34,6 +34,7 @@ make sure you redirect to your openid connect realm
 
 now create a new Dockerfile
 (or use my)
+
      #cat > Dockerfile << EOF
      FROM docker.io/grafana/grafana
      USER root
@@ -43,6 +44,7 @@ now create a new Dockerfile
      EOF
 
 now rebuild the container
+
      # buildah (to be continue...)
 
 in order to run it in OpenShift I will recommand to add a ConfigMap
