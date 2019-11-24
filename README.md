@@ -34,26 +34,26 @@ make sure you redirect to your openid connect realm
 
 now create a new Dockerfile
 (or use my)
-   #cat > Dockerfile << EOF
-   FROM docker.io/grafana/grafana
-   USER root
-   WORKDIR /usr/share/ca-certificates/<your org>
-   COPY <private_ca_file>.crt .
-   RUN echo "<your org>/<private_ca_file>.crt" >> /etc/ca-certificates.conf && update-ca-certificates
-   EOF
+     #cat > Dockerfile << EOF
+     FROM docker.io/grafana/grafana
+     USER root
+     WORKDIR /usr/share/ca-certificates/<your org>
+     COPY <private_ca_file>.crt .
+     RUN echo "<your org>/<private_ca_file>.crt" >> /etc/ca-certificates.conf && update-ca-certificates
+     EOF
 
 now rebuild the container
-    # buildah (to be continue...)
+     # buildah (to be continue...)
 
 in order to run it in OpenShift I will recommand to add a ConfigMap
 for the grafana.ini
 
-   #oc create configmap grafana-main --from-file=grafana.ini
+     #oc create configmap grafana-main --from-file=grafana.ini
 
 now we will update the DC YAML to add the ConfigMap
 with the following values :
 
-   #oc edit dc/grafana
+     #oc edit dc/grafana
 
        terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
